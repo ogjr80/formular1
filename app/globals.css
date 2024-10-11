@@ -3,25 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F4F4F4;
+  --foreground: #1E1E1E;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1E1E1E;
+    --foreground: #F4F4F4;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.card {
+  @apply bg-white dark:bg-secondary shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300;
+}
+
+.card-content {
+  @apply p-6;
+}
+
+.card-footer {
+  @apply bg-gray-100 dark:bg-gray-800 px-6 py-4;
+}
+
+.btn {
+  @apply bg-primary text-white font-bold py-2 px-4 rounded hover:bg-red-700 transition duration-300;
+}
+
+.section-title {
+  @apply text-3xl font-bold text-secondary dark:text-white mb-8;
+}
+
+.grid-layout {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6;
 }
